@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.picture-box {
+  float: right;
+  width: 120px;
+  height: 120px;
+  border: 3px solid #000;
+  text-align: center;
+  line-height: 120px;
+  margin-top: -120px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  table-layout: fixed;
+}
+
+th, td {
+  border: 1px solid #a17f4d;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+th {
+  background-color: #f9f7f3;
+  font-weight: bold;
+}
+
+.final-grade {
+  margin-top: 30px;
+  border: 2px solid #000;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  float: right;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-top: 37px;
+}
+
+.nav-dropdown label {
+  margin-right: 5px;
+  font-weight: normal;
+}
+
+.nav-dropdown select {
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.final-grade::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
