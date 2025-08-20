@@ -1,4 +1,4 @@
-/* style1.css */
+/* CSS design for personal_info.html */
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -44,3 +44,4 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
