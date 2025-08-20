@@ -1,4 +1,4 @@
-/* style2.css */
+/* CSS design for list.html */
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -46,3 +46,4 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
