@@ -27,7 +27,7 @@ header {
 
 .nav {
   position: absolute;
-  top: 50%;          
+  top: 30%;          
   transform: translateY(-50%);
   background: rgba(0,0,0,0.6);
   color: #fff;
@@ -132,4 +132,5 @@ header {
   width: 100%;
   height: auto;
 }
+
 
