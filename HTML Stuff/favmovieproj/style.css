@@ -78,7 +78,7 @@ header {
 }
 
 .description {
-  display: block;         
+  display: none;         
   position: absolute;     
   bottom: 0;
   left: 0;
@@ -132,3 +132,4 @@ header {
   width: 100%;
   height: auto;
 }
+
