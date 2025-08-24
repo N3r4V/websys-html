@@ -78,19 +78,18 @@ header {
 }
 
 .description {
-  display: none;         
-  position: absolute;     
-  bottom: 0;
-  left: 0;
-  right: 0;
+  display: none;
   background: rgba(0,0,0,0.8);
   color: #fff;
   padding: 15px;
   text-align: justify;
-  max-height: 60%;        
+  max-height: 200px;   
   overflow-y: auto;
   border-radius: 10px;
+  margin-top: 10px;   
+  position: static;    
 }
+
 
 .description p {
   text-align: justify;
@@ -132,5 +131,6 @@ header {
   width: 100%;
   height: auto;
 }
+
 
 
