@@ -27,7 +27,7 @@ header {
 
 .nav {
   position: absolute;
-  top: 50%; /* Center vertically */
+  top: 30%; 
   transform: translateY(-50%);
   background: rgba(0,0,0,0.6);
   color: #fff;
@@ -53,10 +53,9 @@ header {
 .slide img {
   width: 100%;
   border-radius: 10px;
-  display: block; /* Remove extra space below image */
+  display: block; 
 }
 
-/* Overlay buttons - now positioned below image */
 .overlay {
   display: flex;
   gap: 10px;
@@ -127,3 +126,4 @@ header {
   width: 100%;
   height: auto;
 }
+
