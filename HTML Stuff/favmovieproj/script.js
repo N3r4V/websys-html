@@ -1,14 +1,15 @@
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
+const slideButtons = document.querySelectorAll(".slide-buttons");
+const descriptions = document.querySelectorAll(".description");
 
 function showSlide(index) {
-    // Remove active class from all slides
-    slides.forEach(slide => {
-        slide.classList.remove("active", "slide-left", "slide-right");
-    });
-    
-    // Add active class to the new slide
+    slides.forEach(slide => slide.classList.remove("active", "slide-left", "slide-right"));
+    slideButtons.forEach(btn => btn.classList.remove("active"));
+    descriptions.forEach(desc => desc.classList.remove("active"));
+
     slides[index].classList.add("active");
+    slideButtons[index].classList.add("active");
     currentSlide = index;
 }
 
@@ -32,7 +33,7 @@ function toggleDescription(num) {
     
     // Close other descriptions when opening one
     if (desc.classList.contains("active")) {
-        document.querySelectorAll('.description').forEach(otherDesc => {
+        descriptions.forEach(otherDesc => {
             if (otherDesc !== desc && otherDesc.classList.contains('active')) {
                 otherDesc.classList.remove('active');
             }
