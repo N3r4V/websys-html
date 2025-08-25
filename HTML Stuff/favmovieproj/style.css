@@ -59,7 +59,7 @@ header {
 
 .overlay {
   position: absolute;
-  top: 15px;              
+  bottom: 25px;               
   left: 50%;                 
   transform: translateX(-50%);
   display: flex;
@@ -131,6 +131,7 @@ header {
   width: 100%;
   height: auto;
 }
+
 
 
 
