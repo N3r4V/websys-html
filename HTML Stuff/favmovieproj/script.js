@@ -2,43 +2,54 @@ let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 
 function showSlide(index) {
-    // Remove active class and prepare for animation
-    slides.forEach((slide, i) => {
+    // Remove active class from all slides
+    slides.forEach(slide => {
         slide.classList.remove("active");
-        
-        // Set slide direction for animation
-        if (i === currentSlide) {
-            if (index > currentSlide) {
-                slide.classList.add("slide-left");
-            } else {
-                slide.classList.add("slide-right");
-            }
-        }
     });
     
-    // Add active class to new slide with delay for smooth transition
-    setTimeout(() => {
-        slides.forEach(slide => {
-            slide.classList.remove("slide-left", "slide-right");
-        });
-        
-        slides[index].classList.add("active");
-        currentSlide = index;
-    }, 50);
+    // Add active class to the new slide
+    slides[index].classList.add("active");
+    currentSlide = index;
 }
 
 function nextSlide() {
     const nextIndex = (currentSlide + 1) % slides.length;
-    showSlide(nextIndex);
+    
+    // Set animation direction
+    slides[currentSlide].classList.add("slide-left");
+    slides[nextIndex].classList.add("slide-right");
+    slides[nextIndex].classList.add("active");
+    
+    // Remove animation classes after transition
+    setTimeout(() => {
+        slides[currentSlide].classList.remove("slide-left", "active");
+        slides[nextIndex].classList.remove("slide-right");
+        currentSlide = nextIndex;
+    }, 600); // Match this with CSS transition duration
 }
 
 function prevSlide() {
     const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(prevIndex);
+    
+    // Set animation direction
+    slides[currentSlide].classList.add("slide-right");
+    slides[prevIndex].classList.add("slide-left");
+    slides[prevIndex].classList.add("active");
+    
+    // Remove animation classes after transition
+    setTimeout(() => {
+        slides[currentSlide].classList.remove("slide-right", "active");
+        slides[prevIndex].classList.remove("slide-left");
+        currentSlide = prevIndex;
+    }, 600); // Match this with CSS transition duration
 }
 
 function goToSlide(index) {
-    showSlide(index);
+    if (index > currentSlide) {
+        nextSlide();
+    } else if (index < currentSlide) {
+        prevSlide();
+    }
 }
 
 function toggleDescription(num) {
@@ -58,9 +69,4 @@ function toggleDescription(num) {
 // Init first slide
 document.addEventListener('DOMContentLoaded', function() {
     showSlide(0);
-    
-    // Make sure first slide is properly positioned
-    setTimeout(() => {
-        slides[0].classList.add("active");
-    }, 100);
 });
