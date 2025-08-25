@@ -14,60 +14,65 @@
     <main class="container">
         <!-- Slideshow -->
         <div class="slideshow">
-            <button class="nav prev" onclick="prevSlide()">&#10094;</button>
-            
-            <!-- Slide 1 -->
-            <div class="slide active">
-                <img src="https://n3r4v.github.io/websys-html/HTML%20Stuff/3idots.png" alt="Movie 1">
-                <div class="overlay">
-                    <button onclick="toggleDescription(1)">Description</button>
-                    <button onclick="location.href='https://n3r4v.github.io/websys-html/HTML%20Stuff/favmovieproj/3idots.html'">Play Trailer</button>
+            <!-- Slides wrapper -->
+            <div class="slides-wrapper">
+                <div class="slide active">
+                    <img src="https://n3r4v.github.io/websys-html/HTML%20Stuff/3idots.png" alt="Movie 1">
                 </div>
-                <div class="description" id="desc1">
-                    <h3>3 Idiots</h3>
-                    <p><strong>3 Idiots</strong> is a 2009 Indian Hindi-language coming-of-age satirical comedy-drama film written, edited and directed by Rajkumar Hirani, co-written by Abhijat Joshi and produced by Vidhu Vinod Chopra. The film stars Aamir Khan, R. Madhavan and Sharman Joshi in the title roles, while Kareena Kapoor, Boman Irani, Mona Singh and Omi Vaidya play supporting roles. Narrated through two parallel timelines, one in the present and the other set ten years earlier, the story follows the friendship of three students at an Indian engineering college and is a satire about the intrinsic paternalism under the Indian education system.</p>
-                    <h3>Why I Like This Movie?</h3>
-                    <ul>
-                        <li>For me, its one of the best Indian films I watched on dubbed Television channels.</li>
-                    </ul>
+                <div class="slide">
+                    <img src="https://n3r4v.github.io/websys-html/HTML%20Stuff/urname.png" alt="Movie 2">
                 </div>
+                <div class="slide">
+                    <img src="https://n3r4v.github.io/websys-html/HTML%20Stuff/wall-e.png" alt="Movie 3">
+                </div>
+
+                <!-- Navigation arrows -->
+                <button class="nav prev" onclick="prevSlide()">&#10094;</button>
+                <button class="nav next" onclick="nextSlide()">&#10095;</button>
             </div>
-            
-            <!-- Slide 2 -->
-            <div class="slide">
-                <img src="https://n3r4v.github.io/websys-html/HTML%20Stuff/urname.png" alt="Movie 2">
-                <div class="overlay">
-                    <button onclick="toggleDescription(2)">Description</button>
-                    <button onclick="location.href='https://n3r4v.github.io/websys-html/HTML%20Stuff/favmovieproj/kiminoyawa.html'">Play Trailer</button>
-                </div>
-                <div class="description" id="desc2">
-                    <h3>Your Name</h3>
-                    <p><strong>Your Name</strong> (君の名は, Kimi no Na wa) is a 2016 Japanese animated romantic fantasy film written and directed by Makoto Shinkai, produced by CoMix Wave Films, and distributed by Toho. The first installment of what critics deem Shinkai's "disaster trilogy," whose three films each share themes inspired by the frequency of natural disasters in Japan, it depicts the story of high school students Taki Tachibana and Mitsuha Miyamizu, who suddenly begin to swap bodies despite having never met, unleashing chaos onto each other's lives.</p>
-                    <h3>Why I Like This Movie?</h3>
-                    <ul>
-                        <li>Its one of the Anime Movies that I actually liked.</li>
-                    </ul>
-                </div>
+
+            <!-- Overlay buttons -->
+            <div class="overlay">
+                <button onclick="toggleDescription(1)">Description</button>
+                <button onclick="location.href='https://n3r4v.github.io/websys-html/HTML%20Stuff/favmovieproj/3idots.html'">Play Trailer</button>
             </div>
-            
-            <!-- Slide 3 -->
-            <div class="slide">
-                <img src="https://n3r4v.github.io/websys-html/HTML%20Stuff/wall-e.png" alt="Movie 3">
-                <div class="overlay">
-                    <button onclick="toggleDescription(3)">Description</button>
-                    <button onclick="location.href='https://n3r4v.github.io/websys-html/HTML%20Stuff/favmovieproj/walle.html'">Play Trailer</button>
-                </div>
-                <div class="description" id="desc3">
-                    <h3>Wall-E</h3>
-                    <p><strong>WALL-E</strong> is a 2008 animated science fiction film from Pixar that follows a small, lonely waste-collecting robot named WALL-E on a garbage-strewn Earth. After centuries of solitude, WALL-E meets a sleek, advanced robot named EVE and falls in love with her. His pursuit of EVE leads them on an epic adventure across the galaxy and to the Axiom, a giant spaceship carrying the last of humanity, where their actions ultimately decide the fate of Earth and its inhabitants.</p>
-                    <h3>Why I Like This Movie?</h3>
-                    <ul>
-                        <li>Its the first animated movie that I fell in love with as a kid.</li>
-                    </ul>
-                </div>
+            <!-- Description panel -->
+            <div id="desc1" class="description">
+                <h3>3 Idiots</h3>
+                <p><strong>3 Idiots</strong> is a 2009 Indian Hindi-language coming-of-age satirical comedy-drama film written, edited and directed by Rajkumar Hirani, co-written by Abhijat Joshi and produced by Vidhu Vinod Chopra. The film stars Aamir Khan, R. Madhavan and Sharman Joshi in the title roles, while Kareena Kapoor, Boman Irani, Mona Singh and Omi Vaidya play supporting roles. Narrated through two parallel timelines, one in the present and the other set ten years earlier, the story follows the friendship of three students at an Indian engineering college and is a satire about the intrinsic paternalism under the Indian education system.</p>
+                <h3>Why I Like This Movie?</h3>
+                <ul>
+                    <li>For me, its one of the best Indian films I watched on dubbed Television channels.</li>
+                </ul>
             </div>
-            
-            <button class="nav next" onclick="nextSlide()">&#10095;</button>
+
+            <!-- Overlay + description for slide 2 -->
+            <div class="overlay">
+                <button onclick="toggleDescription(2)">Description</button>
+                <button onclick="location.href='https://n3r4v.github.io/websys-html/HTML%20Stuff/favmovieproj/kiminoyawa.html'">Play Trailer</button>
+            </div>
+            <div id="desc2" class="description">
+                <h3>Your Name</h3>
+                <p><strong>Your Name</strong> (君の名は, Kimi no Na wa) is a 2016 Japanese animated romantic fantasy film written and directed by Makoto Shinkai, produced by CoMix Wave Films, and distributed by Toho. The first installment of what critics deem Shinkai's "disaster trilogy," whose three films each share themes inspired by the frequency of natural disasters in Japan, it depicts the story of high school students Taki Tachibana and Mitsuha Miyamizu, who suddenly begin to swap bodies despite having never met, unleashing chaos onto each other's lives.</p>
+                <h3>Why I Like This Movie?</h3>
+                <ul>
+                    <li>Its one of the Anime Movies that I actually liked.</li>
+                </ul>
+            </div>
+
+            <!-- Overlay + description for slide 3 -->
+            <div class="overlay">
+                <button onclick="toggleDescription(3)">Description</button>
+                <button onclick="location.href='https://n3r4v.github.io/websys-html/HTML%20Stuff/favmovieproj/walle.html'">Play Trailer</button>
+            </div>
+            <div id="desc3" class="description">
+                <h3>Wall-E</h3>
+                <p><strong>WALL-E</strong> is a 2008 animated science fiction film from Pixar that follows a small, lonely waste-collecting robot named WALL-E on a garbage-strewn Earth. After centuries of solitude, WALL-E meets a sleek, advanced robot named EVE and falls in love with her. His pursuit of EVE leads them on an epic adventure across the galaxy and to the Axiom, a giant spaceship carrying the last of humanity, where their actions ultimately decide the fate of Earth and its inhabitants.</p>
+                <h3>Why I Like This Movie?</h3>
+                <ul>
+                    <li>Its the first animated movie that I fell in love with as a kid.</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Side Panel -->
