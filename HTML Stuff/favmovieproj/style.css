@@ -17,17 +17,19 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  align-items: flex-start;
 }
 
 .slideshow {
   position: relative;
   width: 70%;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav {
   position: absolute;
-  top: 30%; 
+  top: 50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.6);
   color: #fff;
@@ -43,11 +45,23 @@ header {
 .nav.next { right: 15px; }
 
 .slide {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.6s ease-in-out;
 }
 
 .slide.active {
-  display: block;
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.slide.prev {
+  transform: translateX(-100%);
 }
 
 .slide img {
@@ -75,17 +89,15 @@ header {
 }
 
 .description {
-  display: none;
+  flex: 1; 
   background: rgba(0,0,0,0.8);
   color: #fff;
   padding: 15px;
   text-align: justify;
-  max-height: 600px;
   overflow-y: auto;
   border-radius: 10px;
-  margin-top: 0;
+  margin-top: 10px;
 }
-
 .description p {
   text-align: justify;
 }
@@ -127,4 +139,36 @@ header {
   height: auto;
 }
 
+/*Response: Tablet */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .slideshow, .side-panel {
+    width: 100%;
+  }
+
+  .side-panel {
+    margin-top: 15px;
+  }
+}
+
+/*Response: Mobile */
+@media (max-width: 600px) {
+  header {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .overlay button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .nav {
+    font-size: 1.5rem;
+    padding: 8px 12px;
+  }
+}
