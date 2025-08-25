@@ -4,7 +4,7 @@ const slides = document.querySelectorAll(".slide");
 function showSlide(index) {
     // Remove active class from all slides
     slides.forEach(slide => {
-        slide.classList.remove("active");
+        slide.classList.remove("active", "slide-left", "slide-right");
     });
     
     // Add active class to the new slide
@@ -14,42 +14,16 @@ function showSlide(index) {
 
 function nextSlide() {
     const nextIndex = (currentSlide + 1) % slides.length;
-    
-    // Set animation direction
-    slides[currentSlide].classList.add("slide-left");
-    slides[nextIndex].classList.add("slide-right");
-    slides[nextIndex].classList.add("active");
-    
-    // Remove animation classes after transition
-    setTimeout(() => {
-        slides[currentSlide].classList.remove("slide-left", "active");
-        slides[nextIndex].classList.remove("slide-right");
-        currentSlide = nextIndex;
-    }, 600); // Match this with CSS transition duration
+    showSlide(nextIndex);
 }
 
 function prevSlide() {
     const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
-    
-    // Set animation direction
-    slides[currentSlide].classList.add("slide-right");
-    slides[prevIndex].classList.add("slide-left");
-    slides[prevIndex].classList.add("active");
-    
-    // Remove animation classes after transition
-    setTimeout(() => {
-        slides[currentSlide].classList.remove("slide-right", "active");
-        slides[prevIndex].classList.remove("slide-left");
-        currentSlide = prevIndex;
-    }, 600); // Match this with CSS transition duration
+    showSlide(prevIndex);
 }
 
 function goToSlide(index) {
-    if (index > currentSlide) {
-        nextSlide();
-    } else if (index < currentSlide) {
-        prevSlide();
-    }
+    showSlide(index);
 }
 
 function toggleDescription(num) {
