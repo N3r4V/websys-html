@@ -67,16 +67,19 @@ header {
   display: block;
 }
 
-/* Move overlay outside slide container */
-.buttons-container {
-  display: flex;
+.slide-buttons {
+  display: none; 
   gap: 10px;
   justify-content: center;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.buttons-container button {
+.slide-buttons.active {
+  display: flex;
+}
+
+.slide-buttons button {
   padding: 8px 14px;
   background: #ffcc00;
   border: none;
@@ -97,11 +100,13 @@ header {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+  display: none; 
 }
 
 .description.active {
   max-height: 300px;
   padding: 15px;
+  display: block; 
 }
 
 .description p {
@@ -183,7 +188,7 @@ header {
     width: 100%;
   }
   
-  .buttons-container {
+  .slide-buttons {
     flex-direction: column;
     gap: 5px;
   }
