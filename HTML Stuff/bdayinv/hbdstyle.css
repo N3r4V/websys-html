@@ -12,21 +12,6 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
-  background: url("https://n3r4v.github.io/websys-html/HTML%20Stuff/bdayinv/hbdcard.png") no-repeat center center;
-  background-size: cover;
-  filter: blur(20px) brightness(0.6);
-  animation: moveBg 60s linear infinite;
-  z-index: -9999; /* Push far behind everything */
-}
-
-/*Animated Background*/
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100vw;  
   height: 100vh; 
   background: url("https://n3r4v.github.io/websys-html/HTML%20Stuff/bdayinv/hbdcard.png") 
@@ -37,13 +22,22 @@ body::before {
   z-index: -9999;
 }
 
-/* Background Animation*/
+/* Background Animation */
 @keyframes moveBg {
   0%   { transform: translate(0, 0); }
   25%  { transform: translate(-5%, -5%); }
   50%  { transform: translate(-10%, -2%); }
   75%  { transform: translate(-5%, -8%); }
   100% { transform: translate(0, 0); }
+}
+
+/* Body Layout → keeps .card centered always */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 20px;
 }
 
 /* Card Container */
@@ -56,7 +50,7 @@ body::before {
   text-align: center;
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   animation: fadeIn 1s ease-in-out;
-  margin-bottom: 40px; 
+  margin: auto; 
 }
 
 /* Headings */
@@ -164,7 +158,12 @@ ul li {
   }
 }
 
-
-
-
-
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+  }
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.4em; }
+  h3 { font-size: 1.2em; }
+}
