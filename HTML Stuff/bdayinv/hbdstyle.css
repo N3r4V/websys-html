@@ -21,20 +21,20 @@ body::before {
   z-index: -9999; /* Push far behind everything */
 }
 
-
 /*Animated Background*/
 body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  width: 200%;  
-  height: 200%;
-  background: url("https://n3r4v.github.io/websys-html/HTML%20Stuff/bdayinv/hbdcard.png") repeat;
-  background-size: cover;
-  filter: blur(15px) brightness(0.6);
+  width: 100vw;  
+  height: 100vh; 
+  background: url("https://n3r4v.github.io/websys-html/HTML%20Stuff/bdayinv/hbdcard.png") 
+              no-repeat center center;
+  background-size: cover; 
+  filter: blur(20px) brightness(0.6);
   animation: moveBg 60s linear infinite;
-  z-index: -1;
+  z-index: -9999;
 }
 
 /* Background Animation*/
@@ -163,6 +163,7 @@ ul li {
     opacity: 0;
   }
 }
+
 
 
 
