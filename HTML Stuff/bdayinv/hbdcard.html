@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Invitation</title>
+  <link rel="stylesheet" href="hbdstyle.css">
+</head>
+<body>
+  <div class="card">
+    <h1>🎉 It's My Birthday! 🎉</h1>
+    <h1>🎂</h1>
+    <h2>On the 27th of December</h2>
+
+    <div class="image-container">
+      <img src="https://n3r4v.github.io/websys-html/HTML%20Stuff/hbdcard.png" alt="Birthday Card">
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("surpriseBtn");
+        const img = document.querySelector("img"); // your main picture
+
+        // Preload audio
+        const hornSound = new Audio("https://n3r4v.github.io/websys-html/HTML%20Stuff/Birthday Party Horn Sound Effect.mp3");
+        const popSound = new Audio("https://n3r4v.github.io/websys-html/HTML%20Stuff/Confetti Pop.mp3");
+
+        btn.addEventListener("click", () => {
+            if (btn.disabled) return;
+
+            // Play sounds
+            hornSound.currentTime = 0;
+            popSound.currentTime = 0;
+            hornSound.play();
+            popSound.play();
+
+            // Trigger confetti burst
+            launchConfetti();
+
+            // Disable button for 3s
+            btn.disabled = true;
+            btn.style.opacity = "0.6";
+            setTimeout(() => {
+            btn.disabled = false;
+            btn.style.opacity = "1";
+            }, 3000);
+        });
+
+        function launchConfetti() {
+            const confettiCount = 200;
+
+            // Find the center of the picture
+            const rect = img.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            // Browser zoom scaling factor
+            const zoomScale = window.devicePixelRatio || 1;
+
+            for (let i = 0; i < confettiCount; i++) {
+            const confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+
+            // Random shape
+            if (Math.random() > 0.5) {
+                confetti.style.borderRadius = "50%";
+            } else {
+                confetti.style.borderRadius = "3px";
+            }
+
+            // Bigger & zoom-adaptive size
+            const size = (Math.random() * 12 + 10) * zoomScale;
+            confetti.style.width = `${size}px`;
+            confetti.style.height = `${size * (Math.random() > 0.5 ? 1 : 1.5)}px`;
+
+            // Start from image center
+            confetti.style.position = "fixed";
+            confetti.style.left = `${centerX}px`;
+            confetti.style.top = `${centerY}px`;
+            confetti.style.pointerEvents = "none";
+
+            // Random color
+            confetti.style.backgroundColor = randomColor();
+
+            // Random burst velocity
+            const angle = Math.random() * 2 * Math.PI;
+            const velocity = (Math.random() * 400 + 300) * zoomScale;
+            const driftX = Math.cos(angle) * velocity;
+            const driftY = Math.sin(angle) * velocity + 500;
+
+            confetti.animate(
+                [
+                { transform: `translate(0, 0)`, opacity: 1 },
+                { transform: `translate(${driftX}px, ${driftY}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+                ],
+                {
+                duration: 2500 + Math.random() * 1000,
+                easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+                fill: "forwards"
+                }
+            );
+
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), 3500);
+            }
+        }
+
+        function randomColor() {
+            const colors = ["#ff4b5c", "#ff9f1c", "#2ec4b6", "#e71d36", "#9b5de5", "#00bbf9", "#f15bb5"];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        });
+        </script>
+    </div>
+
+    <h3>What to bring:</h3>
+    <ul>
+      <li>🎁 Gifts (anything is fine)</li>
+      <li>👨‍👩‍👧‍👦 Family and Friends (the more, the merrier)</li>
+      <li>😊 Your smiles (if you're happy, I'm also happy)</li>
+    </ul>
+
+    <h3>This is where you need to go:</h3>
+    <a class="map-link" href="https://maps.app.goo.gl/4oqpnNsp7UwhTere7" target="_blank">
+      📍 Google Map Link
+    </a>
+
+    <button id="surpriseBtn">Click for a Surprise 🎁</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("surpriseBtn");
+    });
+  </script>
+</body>
+</html>
