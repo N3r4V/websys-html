@@ -25,7 +25,7 @@ body::before {
   left: 0;
   width: 200%;  
   height: 200%;
-  background: url("https://n3r4v.github.io/websys-html/HTML%20Stuff/hbdcard.png") repeat;
+  background: url("https://n3r4v.github.io/websys-html/HTML%20Stuff/bdayinv/hbdcard.png") repeat;
   background-size: cover;
   filter: blur(15px) brightness(0.6);
   animation: moveBg 60s linear infinite;
@@ -158,5 +158,6 @@ ul li {
     opacity: 0;
   }
 }
+
 
 
