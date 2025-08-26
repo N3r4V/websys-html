@@ -7,59 +7,48 @@
 }
 
 /* Body Styling */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
 body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;  
-  height: 100vh; 
-  background: url("https://n3r4v.github.io/websys-html/HTML%20Stuff/bdayinv/hbdcard.png") 
-              no-repeat center center;
-  background-size: cover; 
+  width: 100vw;
+  height: 100vh;
+  background: url("https://n3r4v.github.io/websys-html/HTML%20Stuff/bdayinv/hbdcard.png") no-repeat center center;
+  background-size: cover;
   filter: blur(20px) brightness(0.6);
   animation: moveBg 60s linear infinite;
   z-index: -9999;
 }
 
-/* Background Animation */
+/* Background Animation*/
 @keyframes moveBg {
-  0%   { transform: translate(0, 0); }
-  25%  { transform: translate(-5%, -5%); }
-  50%  { transform: translate(-10%, -2%); }
-  75%  { transform: translate(-5%, -8%); }
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5%, -5%); }
+  50% { transform: translate(-10%, -2%); }
+  75% { transform: translate(-5%, -8%); }
   100% { transform: translate(0, 0); }
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-/* Body Layout → keeps .card centered always */
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; 
-  padding: 20px;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 /* Card Container */
 .card {
   background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
+  padding: 40px;
+  max-width: 900px;
+  width: 100%;
   text-align: center;
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   animation: fadeIn 1s ease-in-out;
-  margin: auto; 
-  width: 90%; 
-  max-width: 700px; 
-  font-size: 1.2rem;
-  padding: 20px;
+  margin: 20px auto; /* Center the card */
 }
 
 /* Headings */
@@ -153,27 +142,27 @@ ul li {
 }
 
 @keyframes confetti-burst {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
-  }
-  70% {
-    transform: translate(var(--dx), var(--dy)) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(var(--dx), calc(var(--dy) + 300px)) scale(0.8);
-    opacity: 0;
-  }
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  70% { transform: translate(var(--dx), var(--dy)) scale(1); opacity: 1; }
+  100% { transform: translate(var(--dx), calc(var(--dy) + 300px)) scale(0.8); opacity: 0; }
 }
 
-/* Responsive Tweaks */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .card {
-    padding: 20px;
+    padding: 25px;
+    margin: 15px;
   }
-  h1 { font-size: 2em; }
-  h2 { font-size: 1.4em; }
-  h3 { font-size: 1.2em; }
+  
+  h1 {
+    font-size: 2.2em;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+  
+  ul {
+    font-size: 1.1em;
+  }
 }
-
