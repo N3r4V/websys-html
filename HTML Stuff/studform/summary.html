@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1 { border-bottom: 2px solid #000; padding-bottom: 10px; }
+        .profile { width: 100px; height: 100px; border: 3px solid black; object-fit: cover; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Student Information Summary</h1>
+    <ul id="summaryList"></ul>
+    <img id="profileImg" class="profile" style="display:none">
+
+    <script>
+        const data = JSON.parse(localStorage.getItem("studentData"));
+        if (data) {
+            const summaryList = document.getElementById("summaryList");
+            summaryList.innerHTML = `
+                <li><strong>First Name:</strong> ${data.fname}</li>
+                <li><strong>Last Name:</strong> ${data.lname}</li>
+                <li><strong>Student ID:</strong> ${data.studentId}</li>
+                <li><strong>Email:</strong> ${data.email}</li>
+                <li><strong>Date of Birth:</strong> ${data.birthday}</li>
+                <li><strong>Gender:</strong> ${data.gender} ${data.gender === "Other" ? "(" + data.genderOther + ")" : ""}</li>
+                <li><strong>Course:</strong> ${data.course}</li>
+                <li><strong>Year Level:</strong> ${data.year}</li>
+                <li><strong>Hobbies:</strong> ${data.hobbies.join(", ")} ${data.hobbies.includes("Other") ? "(" + data.hobbyOther + ")" : ""}</li>
+            `;
+
+            if (data.profilePic) {
+                const img = document.getElementById("profileImg");
+                img.src = data.profilePic;
+                img.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
