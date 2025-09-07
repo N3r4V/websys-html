@@ -33,3 +33,12 @@ document.getElementById("studentForm").addEventListener("submit", function (e) {
     localStorage.setItem("studentData", JSON.stringify(data));
     window.location.href = "summary.html";
 });
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+    document.getElementById("studentForm").reset();
+    document.getElementById("others").disabled = true;
+    document.getElementById("other1").disabled = true;
+    const preview = document.getElementById("preview");
+    preview.src = "";
+    preview.style.display = "none";
+});
