@@ -3,113 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathaniel Francisco Agustin - Resume</title>
+    <title>My Resume</title>
     <style>
         body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            font-family: serif; /* fallback to natural serif font */
+            margin: 20px;
             line-height: 1.6;
-            color: #333;
         }
-        
+
         .header-container {
             display: flex;
             align-items: center;
-            gap: 20px;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-width: 800px;
-            margin: 0 auto;
+            gap: 15px;
+            margin-bottom: 20px;
         }
-        
+
         .profile-picture {
             width: 100px;
             height: 100px;
-            border-radius: 50%;
+            border-radius: 50%; /* keep circular picture */
             object-fit: cover;
-            border: 3px solid #029b02;
-        }
-        
-        .name-title {
-            flex: 1;
-        }
-        
-        h1 {
-            margin: 0;
-            color: #054903;
-            font-size: 2.2em;
-        }
-        
-        .title {
-            color: #3d4444;
-            font-size: 1.2em;
-            margin-top: 5px;
         }
 
-        .body-container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #054903;
-            padding-bottom: 8px;
-            margin-top: 25px;
-        }
-        
-        ul {
-            padding-left: 20px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-        }
-        
         .contact-info {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .contact-location {
-            flex-basis: 100%;
+            gap: 10px;
+            margin-top: 10px;
         }
 
-        .icon {
-            width: 20px;
-            height: 20px;
-            background-color: #054903;
-            border-radius: 50%;
-            display: inline-flex;
+        .contact-item, .contact-location {
+            display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 12px;
+            gap: 5px;
         }
-        
-        a {
-            color: #054903;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
+
+        .contact-location {
+            flex-basis: 100%; /* force location onto new line */
         }
     </style>
 </head>
@@ -119,7 +49,7 @@
              alt="Profile Picture" class="profile-picture">
         <div class="name-title">
             <h1>Nathaniel Francisco Agustin</h1>
-            <div class="title">Programmer & Web Developer</div>
+            <div>Programmer & Web Developer</div>
         </div>
     </div>
     
@@ -153,26 +83,26 @@
         <h2>Contact</h2>
         <div class="contact-info">
             <div class="contact-item">
-                <span class="icon">@</span>
+                <span>@</span>
                 <a href="mailto:afnathaniel8080@gmail.com" target="_blank">afnathaniel8080@gmail.com</a>
             </div>
             <div class="contact-item">
-                <span class="icon">#</span>
+                <span>#</span>
                 <span>(+63) 977-684-3373 (GLOBE) or </span>
                 <span>(+63) 992-409-1906 (DITO)</span>
             </div>
             <div class="contact-item">
-                <span class="icon">F</span>
+                <span>F</span>
                 <a href="https://www.facebook.com/nathaniel.agustin.56" target="_blank">My Facebook Profile</a>
             </div>
             <div class="contact-location">
-                <span class="icon">L</span>
+                <span>L</span>
                 <span>San Vicente, Magsingal, Ilocos Sur, Philippines</span>
             </div>
         </div>
 
         <footer>
-            <p style="text-align: center; margin-top: 30px; font-size: 0.9em; color: #0c4107;">
+            <p style="text-align: center; margin-top: 30px; font-size: 0.9em;">
                 &copy; 2025 Nathaniel Francisco Agustin. All rights reserved.
             </p>
         </footer>
