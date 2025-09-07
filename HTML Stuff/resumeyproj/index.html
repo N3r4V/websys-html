@@ -22,8 +22,9 @@
             width: 100px;
             height: 100px;
             object-fit: cover;
-            border: 3px solid black; 
-            border-radius: 8px; 
+            background-color: black;
+            padding: 5px;
+            border-radius: 8px;
         }
         
         .contact-info {
@@ -33,14 +34,29 @@
             margin-top: 10px;
         }
 
-        .contact-item, .contact-location {
-            display: flex;
+        .contact-item span:first-child,
+        .contact-location span:first-child {
+            display: inline-flex;
+            justify-content: center;
             align-items: center;
-            gap: 5px;
+            width: 24px;
+            height: 24px;
+            background-color: black;
+            color: white;
+            border-radius: 50%; 
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 5px;
         }
 
         .contact-location {
             flex-basis: 100%; 
+        }
+
+        h2 {
+            border-bottom: 2px solid black;
+            padding-bottom: 4px;
+            margin-top: 25px;
         }
     </style>
 </head>
@@ -110,6 +126,7 @@
     </div>
 </body>
 </html>
+
 
 
 
